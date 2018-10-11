@@ -7,6 +7,7 @@ class Rama {
 	int prioridad;
 public:
 	Rama();
+	Rama(string);
     Rama(string, int);
     Rama(const Rama&);
     Rama& operator=(const Rama&);

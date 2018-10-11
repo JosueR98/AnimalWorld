@@ -14,6 +14,8 @@ Perro	9
 Gato	11
 Ballena	13
 Lagarto	15
-Cacarea	18
+Cacarea	20
+caga	18
 Aguila	17
-Gallina	19
+paloma	19
+Gallina	21
