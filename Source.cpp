@@ -35,7 +35,7 @@ int main() {
 	}
 	cout << "Pensaste en : " << actual->dato.getCadena() << endl;
 
-	// Actualizado nuevo 22:07 xd lol
+	// Actualizado nuevo 22:07 xd
 
 	system("pause");
 
