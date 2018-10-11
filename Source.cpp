@@ -6,6 +6,8 @@ using namespace std;
 
 int main() {
 
+	// hola
+
 	ArbolBinario arbolito;
 	
 	ManejaArchivos::cargarArbol(arbolito);
