@@ -33,6 +33,7 @@ int main() {
 	}
 	cout << "Pensaste en : " << actual->dato.getCadena() << endl;
 
+	// Actualizado
 
 	system("pause");
 
