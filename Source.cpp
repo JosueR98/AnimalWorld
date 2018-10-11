@@ -9,8 +9,6 @@ int main() {
 	ArbolBinario arbolito;
 	
 	ManejaArchivos::cargarArbol(arbolito);
-	ManejaArchivos::cargarArbol(arbolito);
-	ManejaArchivos::cargarArbol(arbolito);
 
 	//cout << arbolito.enOrden(arbolito.getRaiz(), '\n');
 	
