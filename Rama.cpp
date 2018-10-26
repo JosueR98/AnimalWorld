@@ -7,6 +7,12 @@ Rama::Rama()
 	prioridad = -1;
 }
 
+Rama::Rama(string c)
+{
+	this->cadena = c;
+	prioridad = -1;
+}
+
 Rama::Rama(string cadena,int prioridad)
 {
 	this->cadena = cadena;

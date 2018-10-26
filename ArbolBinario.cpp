@@ -137,4 +137,26 @@ void ArbolBinario::setPrioridades(Nodo* raiz)
 	}
 }
 
+void ArbolBinario::agregar(Nodo * pos, Nodo * posPadre, string pregunta, string respuesta)
+{
+	Nodo* tmp = nullptr;
+	Nodo* a = new Nodo(*new Rama(pregunta));
+	Nodo* b = new Nodo(*new Rama(respuesta));
+
+
+	if (posPadre->izq = pos) {
+		posPadre->izq = a;
+		a->izq = pos;
+		a->der = b;
+	
+	}
+	else {
+		posPadre->der = a;
+		a->izq = pos;
+		a->der = b;
+	}
+	pos->izq = nullptr;
+	pos->der = nullptr;
+	setPrioridades(raiz);
+}
 
