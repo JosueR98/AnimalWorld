@@ -19,13 +19,16 @@ void ManejaArchivos::cargarArbol(ArbolBinario &arbolito)
 	ifstream in;
 	string cadena;
 	string prioridad;
-	
+	Rama* tmp = nullptr;
+
 	in.open("datos.txt",std::ios::in);
 	
-	while (!in.eof()) {
+	while (in.good()) {
 		getline(in, cadena, '\t');
-		getline(in, prioridad, '\n');
-		arbolito.insertar(*new Rama(cadena, stringToInt(prioridad)));
+		getline(in, prioridad, '\n');	
+		if (!in.good())break;
+		tmp = new Rama(cadena, stringToInt(prioridad));
+		arbolito.insertar(*tmp);
 	}
 
 	in.close();

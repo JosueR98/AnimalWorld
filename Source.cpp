@@ -18,11 +18,7 @@ int main() {
 		jugar(arbolito);
 		system("cls");
 		cout << "Jugamos de nuevo : "; cin >> res;
-		res = 0;
-	} while (res != 1);
-
-	
-	jugar(arbolito);
+	} while (res != 0);
 
 	system("pause");
 

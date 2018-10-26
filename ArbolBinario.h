@@ -27,21 +27,11 @@ public:
 	Nodo* getRaiz();
 	void setRaiz(Nodo*);
 
-	// Recorridos
-	string enOrden(Nodo* r, char delimitador);
-	string postOrden(Nodo* r, char delimitador);
-	string preOrden(Nodo* r, char delimitador);
-
-	// Complejos
-	int  getAltura(Nodo* r);
-	Nodo* buscarElemento(Nodo* r, Rama e); 
 	void insertar(Rama elemento);
-    bool borrarElemento(Nodo* r, Nodo* rp, Rama elemento);
+  
 
 	static bool esHoja(Nodo*);
 	void setPrioridades(Nodo* raiz);
-
-	// Faltantes
 	void agregar(Nodo* pos, Nodo* posPadre, string pregunta, string respuesta);  
 
 

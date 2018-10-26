@@ -17,80 +17,6 @@ void ArbolBinario::setRaiz(Nodo* p)
 	this->raiz = p;
 }
 
-string ArbolBinario::enOrden(Nodo * r, char delimitador)
-{
-	string tmp;
-	if (r != nullptr) {
-		enOrden(r->izq, delimitador);
-		s << r->dato.toString() << delimitador;
-		enOrden(r->der, delimitador);
-	}
-	tmp = s.str();
-	s.clear();
-	return tmp;
-}
-
-string ArbolBinario::postOrden(Nodo * r, char delimitador)
-{
-	string tmp;
-	if (r != nullptr) {
-		enOrden(r->izq, delimitador);
-		enOrden(r->der, delimitador);
-		s << r->dato.toString() << delimitador;
-	}
-	tmp = s.str();
-	s.clear();
-	return tmp;
-}
-
-string ArbolBinario::preOrden(Nodo * r, char delimitador)
-{
-	string tmp;
-	if (r != nullptr) {
-		s << r->dato.toString() << delimitador;
-		enOrden(r->izq, delimitador);
-		enOrden(r->der, delimitador);
-	}
-	tmp = s.str();
-	s.clear();
-	return tmp;
-}
-
-int ArbolBinario::getAltura(Nodo * r)
-{
-	int altura_iz = 0, altura_der = 0;
-	if (r != nullptr) {
-		if (r->izq == nullptr && r->der == nullptr) {
-			return 0;
-		}
-		else {
-			altura_iz = this->getAltura(r->izq);
-			altura_der = this->getAltura(r->der);
-			return ((altura_iz > altura_der) ? altura_iz : altura_der) + 1;
-		}
-	}
-	else {
-		return 0;
-	}
-}
-
-Nodo * ArbolBinario::buscarElemento(Nodo * r, Rama e)
-{
-	if (r != nullptr) {
-		if (r->dato == e)
-			return r;
-		if (e < r->dato) {
-			buscarElemento(r->izq, e);
-		}
-		else {
-			buscarElemento(r->der, e);
-		}
-	}
-	else {
-		return nullptr;
-	}
-}
-
 void ArbolBinario::insertar(Rama elemento)
 {
 	Nodo* nuevo = new Nodo(elemento); 
@@ -118,10 +44,6 @@ void ArbolBinario::insertar(Rama elemento)
 	}
 }
 
-bool ArbolBinario::borrarElemento(Nodo * r, Nodo * rp, Rama elemento)
-{
-	return false;
-}
 
 bool ArbolBinario::esHoja(Nodo *n)
 {
@@ -144,19 +66,24 @@ void ArbolBinario::agregar(Nodo * pos, Nodo * posPadre, string pregunta, string 
 	Nodo* b = new Nodo(*new Rama(respuesta));
 
 
-	if (posPadre->izq = pos) {
+	if (posPadre->izq == pos) {
+		tmp = pos;
 		posPadre->izq = a;
-		a->izq = pos;
+		a->izq = tmp;
 		a->der = b;
-	
+
 	}
-	else {
+	if (posPadre->der == pos) {
+		tmp = pos;
 		posPadre->der = a;
-		a->izq = pos;
+		a->izq = tmp;
 		a->der = b;
 	}
-	pos->izq = nullptr;
-	pos->der = nullptr;
+
+	tmp->izq = nullptr;
+	tmp->der = nullptr;
+
 	setPrioridades(raiz);
 }
+
 
