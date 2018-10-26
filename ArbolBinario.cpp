@@ -137,3 +137,4 @@ void ArbolBinario::setPrioridades(Nodo* raiz)
 	}
 }
 
+

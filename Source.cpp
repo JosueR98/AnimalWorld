@@ -15,9 +15,7 @@ int main() {
 	//Jugando 
 
 	Nodo* actual = arbolito.getRaiz();
-
 	bool res;
-
 	while (!ArbolBinario::esHoja(actual)) {
 		cout << actual->dato.getCadena() << "?" << endl;
 		cout << "0- No" << endl << "1- Si" << endl << "Seleccion : ";

@@ -1,0 +1,9 @@
+﻿  ArbolBinario.cpp
+  Interfaz.cpp
+  ManejaArchivos.cpp
+  Rama.cpp
+  Source.cpp
+  utilidades.cpp
+  Generando código...
+c:\users\diego babb\source\repos\animalworld\arbolbinario.cpp(92): warning C4715: 'ArbolBinario::buscarElemento': no todas las rutas de acceso de control devuelven un valor
+  Proyecto2.vcxproj -> C:\Users\Diego Babb\Source\Repos\AnimalWorld\x64\Debug\Proyecto2.exe
