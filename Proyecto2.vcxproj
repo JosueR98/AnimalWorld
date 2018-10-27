@@ -116,12 +116,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ArbolBinario.h" />
+    <ClInclude Include="Controladora.h" />
+    <ClInclude Include="Interfaz.h" />
     <ClInclude Include="ManejaArchivos.h" />
     <ClInclude Include="Rama.h" />
     <ClInclude Include="utilidades.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ArbolBinario.cpp" />
+    <ClCompile Include="Controladora.cpp" />
+    <ClCompile Include="Interfaz.cpp" />
     <ClCompile Include="ManejaArchivos.cpp" />
     <ClCompile Include="Rama.cpp" />
     <ClCompile Include="Source.cpp" />

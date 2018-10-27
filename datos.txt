@@ -1,4 +1,4 @@
-Ave	18
+Ave	20
 Reptil	14
 Mamifero	8
 Pez	6
@@ -15,9 +15,11 @@ Gato	11
 Ballena	13
 Arrastra	16
 Lagarto	15
+nada	18
 Serpiente	17
-Cacarea	22
-caga	20
-Aguila	19
-paloma	21
-Gallina	23
+salamandra	19
+Cacarea	24
+caga	22
+Aguila	21
+paloma	23
+Gallina	25

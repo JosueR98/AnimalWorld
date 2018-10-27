@@ -27,6 +27,12 @@
     <ClInclude Include="utilidades.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="Interfaz.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Controladora.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Rama.cpp">
@@ -42,6 +48,12 @@
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="utilidades.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Interfaz.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Controladora.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
