@@ -1,29 +1,36 @@
 #include "Interfaz.h"
-void Interfaz::manuInicial(Nodo* actual, Nodo* padre, ArbolBinario* arbolito)
+string Interfaz::manuInicial(Nodo* actual, Nodo* padre, ArbolBinario* arbolito)
 {
 	string n;
 	string res;
-	do {
-		actual = arbolito->getRaiz();
-		while (!ArbolBinario::esHoja(actual)) {
-			padre = actual;
-			actual = pregunta(actual, padre);
-		}
-		esGanador(actual, padre, arbolito);
-		system("pause");
-		system("cls");
-		cout << "Jugamos de nuevo : ";
-		getline(cin, n);
-	} while (boolCorrecto(n));
+	actual = arbolito->getRaiz();
+	while (!ArbolBinario::esHoja(actual)) {
+		padre = actual;
+		actual = pregunta(actual, padre);
+	}
+	esGanador(actual, padre, arbolito);
+	system("pause");
+	system("cls");
+	cout << "Jugamos de nuevo?\n";
+	getline(cin, n);
+	return n;
 }
 
 Nodo* Interfaz::pregunta(Nodo* actual, Nodo* padre)
 {
 	string res;
-	cout << actual->dato.getCadena() << "?" << endl;
-	cout << "0- No" << endl << "1- Si" << endl << "Seleccion : ";
+	cout << "\t.-------------------------------------------------------------------------------.\n";
+	cout << "\t|\t\t\t\t\t\t\t\t\t\t|\n";
+	cout << "\t| Animal: "<< actual->dato.getCadena() <<" ?\t\t\t\t\t\t\t\t|\n";
+	cout << "\t|\t\t\t\t\t\t\t\t\t\t|\n";
+	cout << "\t*-------------------------------------------------------------------------------*\n";
+	cout << "\t\t\t.-----------.\t\t.-----------.\n";
+	cout << "\t\t\t|           |\t\t|           |\n";
+	cout << "\t\t\t|    NO     |\t\t|     SI    |\n";
+	cout << "\t\t\t|           |\t\t|           |\n";
+	cout << "\t\t\t*-----------*\t\t*-----------*\n";
+	gotoxy(6,6);
 	getline(cin, res);
-	system("cls"); 
 	if (boolCorrecto(res)) {
 		return actual->der;
 	}
@@ -35,18 +42,32 @@ Nodo* Interfaz::pregunta(Nodo* actual, Nodo* padre)
 void Interfaz::esGanador(Nodo* actual, Nodo* padre, ArbolBinario* arbolito)
 {
 	string res;
-	cout << "Pensaste en : " << actual->dato.getCadena() << endl;
-	cout << "0- No" << endl << "1- Si" << endl << "Seleccion : ";
+	cout << "Pensaste en :" << actual->dato.getCadena() << " ?" << endl;
+	cout << "No o Si" << endl;
 	getline(cin, res);
 	cout << endl;
 	if (boolCorrecto(res)) {
-		cout << "Gane izi pizi" << endl;
+		cout << "Yo he gane!! " << endl;
+		for (int i = 0; i < 10; i++)
+		{
+			system("color 0F");
+			system("color 1F");
+			system("color 2F");
+			system("color 3F");
+			system("color 4F");
+			system("color 5F");
+			system("color 6F");
+			system("color 7F");
+			system("color 8F");
+			system("color 9F");
+		}
+		system("color 0F");
 	}
 	else {
 		string pregunta, respuesta;
-		cout << "Perdi" << endl << "Pregunta : ";
+		cout << "He perdido\nDame una caracteristica del animal que pensaste ";
 		getline(cin, pregunta);
-		cout << endl << "Respuesta : ";
+		cout << endl << "Cual fue el animal que pensaste";
 		getline(cin, respuesta);
 		arbolito->agregar(actual, padre, pregunta, respuesta);
 		ManejaArchivos::guardarArbol(*arbolito);
@@ -57,7 +78,7 @@ bool Interfaz::boolCorrecto(string in)
 {
 	while (in != "SI" && in != "si" && in != "NO" && in != "no")
 	{
-		cout << " DIGITE CORRECTAMENTE EL VALOR ( SI O NO )\n";
+		cout << "Digita el valor corre\actamente ( SI O NO )\n";
 		getline(cin, in);
 	}
 	return in == "SI" || in == "si";

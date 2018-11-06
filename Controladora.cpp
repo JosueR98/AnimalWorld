@@ -1,9 +1,10 @@
 #include "Controladora.h"
-
+#include "Interfaz.h"
 
 
 Controladora::Controladora():arbolito(ArbolBinario()),actual(new Nodo),padre(new Nodo())
 {
+	ManejaArchivos::cargarArbol(arbolito);
 }
 
 
@@ -18,6 +19,6 @@ void Controladora::controlInicial()
 	string n;
 	string res;
 	do {
-
-	} while (n == "SI" || n == "si");
+		n = Interfaz::manuInicial(arbolito.getRaiz(), new Nodo(), &arbolito);
+	} while (Interfaz::boolCorrecto(n));
 }

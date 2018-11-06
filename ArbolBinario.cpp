@@ -47,7 +47,12 @@ void ArbolBinario::insertar(Rama elemento)
 
 bool ArbolBinario::esHoja(Nodo *n)
 {
-	return n->izq == nullptr && n->der == nullptr;
+	if (n) {
+		return n->izq == nullptr && n->der == nullptr;
+	}
+	else {
+		return false;
+	}
 }
 
 void ArbolBinario::setPrioridades(Nodo* raiz)

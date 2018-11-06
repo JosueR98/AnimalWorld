@@ -1,11 +1,9 @@
 #include "utilidades.h"
-#include <sstream>
 
-int stringToInt(string valor)
-{
-	std::stringstream r(valor);
-	int p;
-	r >> p;
-	return p;
-
+void gotoxy(int x, int y) {
+	COORD d;
+	d.X = x;
+	d.Y = y;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), d);
 }
+

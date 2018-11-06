@@ -1,10 +1,13 @@
-#include "Interfaz.h"
+#include "Controladora.h"
 //inline void jugar(ArbolBinario &); // ERROR al ingresar la pregunta o respuesta si se pone un espacio no sirve
 
 int main() {
-	ArbolBinario arbolito;
+	Controladora* c = new Controladora();
+	c->controlInicial();
+	delete c;
+	/*ArbolBinario arbolito;
 	ManejaArchivos::cargarArbol(arbolito);
-	Interfaz::manuInicial(arbolito.getRaiz(), new Nodo(), &arbolito);
+	Interfaz::manuInicial(arbolito.getRaiz(), new Nodo(), &arbolito);*/
 	// hola
 	//ArbolBinario arbolito;
 	//

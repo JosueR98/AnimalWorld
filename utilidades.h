@@ -1,6 +1,10 @@
 #pragma once
 #include <string>
-using std::string;
+#include <windows.h>
 
-int stringToInt(string);
+//Algunas utilidades x que nos falicitaran la comprobacion de cosas. 
+
+
+using std::string;
+void gotoxy(int, int);
 
