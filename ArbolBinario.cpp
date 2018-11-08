@@ -3,45 +3,24 @@
 using namespace std;
 
 
-void ArbolBinario::cambioPosicion(Nodo * root, Nodo * rootp, int n, bool i)
+bool ArbolBinario::cambioPosicion(Nodo * root, Nodo * rootp, bool i)
 {
-	Nodo* aux = root;
-	Nodo* auxp = nullptr;
-	if (n == 1)
+	Nodo* aux = root->izq;
+	if (!esHoja(aux))
 	{
-		if (!esHoja(aux))
-		{
-			if (i)
-			{
-	
-			}
-			else {
-				rootp->izq = auxp;
-				root->izq = aux;
-				auxp->izq = root;
-			}
+		if (i) {//por la izquierda
+			rootp->der = aux;
 		}
+		else {//por la derecha
+			rootp->izq = aux;
+		}
+		root->izq = aux->izq;
+		aux->izq = root;
+		return true;
 	}
-	else {
-		while (aux && n--)
-		{
-			auxp = aux;
-			aux = aux->izq;
-		}
-		if (!esHoja(aux))
-		{
-			if (i)//por la izquierda
-			{
-				
-			}
-			else {//por la derecha
-				rootp->izq = auxp;
-				root->izq = aux;
-				auxp->izq = root;
-			}
-		}
-	}
+	return false;
 }
+
 
 void ArbolBinario::toString(Nodo* root, int n)
 {
@@ -66,7 +45,7 @@ Nodo * ArbolBinario::encontrarCaracteristica(Nodo * root, Nodo* rootp, string in
 {
 	if (root) {
 		if (root->dato.getCadena() == inf) {
-			cambioPosicion(root, rootp, v, i);
+			while (cambioPosicion(root, rootp, i) && v--);
 		}
 		else {
 			Nodo* n = encontrarCaracteristica(root->izq, root, inf, v, true);

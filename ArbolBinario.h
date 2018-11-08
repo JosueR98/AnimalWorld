@@ -23,7 +23,7 @@ private:
 	int tmp = 0; // Para el metodos setPrioridades, contador que ira aumentando 
 public:
 	// Basicos
-	void cambioPosicion(Nodo*, Nodo*, int, bool);
+	bool cambioPosicion(Nodo*, Nodo*, bool);
 	void toString(Nodo*,int);
 	Nodo* encontrarCaracteristica(Nodo*,Nodo*,string, int, bool i);
 	ArbolBinario();
