@@ -72,3 +72,8 @@ Rama::~Rama()
 {
 
 }
+
+ostream& operator << (ostream &o, const Rama &p) {
+	o << p.cadena;
+	return o;
+}

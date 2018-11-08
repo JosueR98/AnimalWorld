@@ -20,5 +20,6 @@ void Controladora::controlInicial()
 	string res;
 	do {
 		n = Interfaz::manuInicial(arbolito.getRaiz(), new Nodo(), &arbolito);
+		system("cls");
 	} while (Interfaz::boolCorrecto(n));
 }

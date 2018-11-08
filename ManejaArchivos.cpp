@@ -27,10 +27,9 @@ void ManejaArchivos::cargarArbol(ArbolBinario &arbolito)
 		getline(in, cadena, '\t');
 		getline(in, prioridad, '\n');	
 		if (!in.good())break;
-		tmp = new Rama(cadena, stringToInt(prioridad));
+		tmp = new Rama(cadena, stoi(prioridad));
 		arbolito.insertar(*tmp);
 	}
-
 	in.close();
 }
 

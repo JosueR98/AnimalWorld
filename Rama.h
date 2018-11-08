@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+using namespace std;
 using std::string;
 
 class Rama {
@@ -13,6 +14,7 @@ public:
     Rama& operator=(const Rama&);
 	bool operator==(const Rama&);
 	bool operator <(const Rama&);
+	friend ostream& operator << (ostream &o, const Rama &p);
 	string getCadena();
 	void setCadena(string);
 	int getPrioridad();

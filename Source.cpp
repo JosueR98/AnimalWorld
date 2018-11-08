@@ -1,13 +1,21 @@
 #include "Controladora.h"
+#include "utilidades.h"
 //inline void jugar(ArbolBinario &); // ERROR al ingresar la pregunta o respuesta si se pone un espacio no sirve
 
 int main() {
+	system("mode con: cols=97 lines=17");
+	system("color 2f");
 	Controladora* c = new Controladora();
 	c->controlInicial();
 	delete c;
-	/*ArbolBinario arbolito;
-	ManejaArchivos::cargarArbol(arbolito);
-	Interfaz::manuInicial(arbolito.getRaiz(), new Nodo(), &arbolito);*/
+	//ArbolBinario arbolito;
+	//ManejaArchivos::cargarArbol(arbolito);
+	//cout << arbolito.encontrarCaracteristica(arbolito.getRaiz(), nullptr, "Mamifero", 2);
+	////arbolito.setPrioridades(arbolito.getRaiz());
+	////ManejaArchivos::guardarArbol(arbolito);
+	//arbolito.toString(arbolito.getRaiz(), 0);
+	//system("pause");
+	//Interfaz::manuInicial(arbolito.getRaiz(), new Nodo(), &arbolito);
 	// hola
 	//ArbolBinario arbolito;
 	//

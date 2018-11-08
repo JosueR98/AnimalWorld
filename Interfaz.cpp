@@ -4,14 +4,27 @@ string Interfaz::manuInicial(Nodo* actual, Nodo* padre, ArbolBinario* arbolito)
 	string n;
 	string res;
 	actual = arbolito->getRaiz();
+	gotoxy(0, 2);
+	cout << "\t.-------------------------------------------------------------------------------.\n";
+	cout << "\t|\t\t\t\t\t\t\t\t\t\t|\n";
+	cout << "\t|\n";
+	cout << "\t|\t\t\t\t\t\t\t\t\t\t|\n";
+	cout << "\t*-------------------------------------------------------------------------------*\n\n\n";
+	cout << "\t\t\t.-----------.\t\t\t.-----------.\n";
+	cout << "\t\t\t|           |\t\t\t|           |\n";
+	cout << "\t\t\t|    NO     |\t\t\t|     SI    |\n";
+	cout << "\t\t\t|           |\t\t\t|           |\n";
+	cout << "\t\t\t*-----------*\t\t\t*-----------*\n";
+	gotoxy(88, 4);
+	cout << '|';
 	while (!ArbolBinario::esHoja(actual)) {
 		padre = actual;
 		actual = pregunta(actual, padre);
 	}
 	esGanador(actual, padre, arbolito);
-	system("pause");
-	system("cls");
-	cout << "Jugamos de nuevo?\n";
+	gotoxy(10, 4);
+	cout << "Jugamos de nuevo?                         ";
+	gotoxy(40, 4);
 	getline(cin, n);
 	return n;
 }
@@ -19,17 +32,9 @@ string Interfaz::manuInicial(Nodo* actual, Nodo* padre, ArbolBinario* arbolito)
 Nodo* Interfaz::pregunta(Nodo* actual, Nodo* padre)
 {
 	string res;
-	cout << "\t.-------------------------------------------------------------------------------.\n";
-	cout << "\t|\t\t\t\t\t\t\t\t\t\t|\n";
-	cout << "\t| Animal: "<< actual->dato.getCadena() <<" ?\t\t\t\t\t\t\t\t|\n";
-	cout << "\t|\t\t\t\t\t\t\t\t\t\t|\n";
-	cout << "\t*-------------------------------------------------------------------------------*\n";
-	cout << "\t\t\t.-----------.\t\t.-----------.\n";
-	cout << "\t\t\t|           |\t\t|           |\n";
-	cout << "\t\t\t|    NO     |\t\t|     SI    |\n";
-	cout << "\t\t\t|           |\t\t|           |\n";
-	cout << "\t\t\t*-----------*\t\t*-----------*\n";
-	gotoxy(6,6);
+	gotoxy(10, 4);
+	cout << "Animal: "<< actual->dato.getCadena() <<" ?                                 ";
+	gotoxy(40,4);
 	getline(cin, res);
 	if (boolCorrecto(res)) {
 		return actual->der;
@@ -42,17 +47,17 @@ Nodo* Interfaz::pregunta(Nodo* actual, Nodo* padre)
 void Interfaz::esGanador(Nodo* actual, Nodo* padre, ArbolBinario* arbolito)
 {
 	string res;
-	cout << "Pensaste en :" << actual->dato.getCadena() << " ?" << endl;
-	cout << "No o Si" << endl;
+	gotoxy(10, 4);
+	cout << "Pensaste en un@: " <<actual->dato.getCadena()<< " ?                     ";
+	gotoxy(40, 4);
 	getline(cin, res);
-	cout << endl;
 	if (boolCorrecto(res)) {
-		cout << "Yo he gane!! " << endl;
-		for (int i = 0; i < 10; i++)
+		gotoxy(10, 4);
+		cout << "Yo he ganado!!                                   " << endl;
+		for (int i = 0; i < 7; i++)
 		{
 			system("color 0F");
 			system("color 1F");
-			system("color 2F");
 			system("color 3F");
 			system("color 4F");
 			system("color 5F");
@@ -60,14 +65,26 @@ void Interfaz::esGanador(Nodo* actual, Nodo* padre, ArbolBinario* arbolito)
 			system("color 7F");
 			system("color 8F");
 			system("color 9F");
+			system("color AF");
+			system("color BF");
+			system("color CF");
+			system("color DF");
+			system("color EF");
 		}
-		system("color 0F");
+		system("color 2F");
 	}
 	else {
 		string pregunta, respuesta;
-		cout << "He perdido\nDame una caracteristica del animal que pensaste ";
+		gotoxy(10, 4);
+		cout << "He perdido                                        ";
+		gotoxy(25, 15);
+		system("pause");
+		gotoxy(10, 4);
+		cout << "Dame una caracteristica del animal que pensaste:      ";
 		getline(cin, pregunta);
-		cout << endl << "Cual fue el animal que pensaste";
+		gotoxy(10, 4);
+		cout << "Cual fue el animal que pensaste:                               ";
+		gotoxy(44, 4);
 		getline(cin, respuesta);
 		arbolito->agregar(actual, padre, pregunta, respuesta);
 		ManejaArchivos::guardarArbol(*arbolito);
@@ -78,8 +95,14 @@ bool Interfaz::boolCorrecto(string in)
 {
 	while (in != "SI" && in != "si" && in != "NO" && in != "no")
 	{
-		cout << "Digita el valor corre\actamente ( SI O NO )\n";
+		gotoxy(25, 1);
+		cout << "Digita el valor corre\actamente ( SI O NO )";
+		gotoxy(40, 4);
+		cout << "                                             ";
+		gotoxy(40, 4);
 		getline(cin, in);
 	}
+	gotoxy(25, 1);
+	cout << "                                          ";
 	return in == "SI" || in == "si";
 }
